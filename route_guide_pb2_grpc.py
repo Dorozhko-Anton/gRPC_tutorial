@@ -29,8 +29,8 @@ class RouteGuideStub(object):
         request_serializer=route__guide__pb2.Point.SerializeToString,
         response_deserializer=route__guide__pb2.RouteSummary.FromString,
         )
-    self.RouteChar = channel.stream_stream(
-        '/RouteGuide/RouteChar',
+    self.RouteChat = channel.stream_stream(
+        '/RouteGuide/RouteChat',
         request_serializer=route__guide__pb2.RouteNote.SerializeToString,
         response_deserializer=route__guide__pb2.RouteNote.FromString,
         )
@@ -61,7 +61,7 @@ class RouteGuideServicer(object):
     context.set_details('Method not implemented!')
     raise NotImplementedError('Method not implemented!')
 
-  def RouteChar(self, request_iterator, context):
+  def RouteChat(self, request_iterator, context):
     """bidirectional
     """
     context.set_code(grpc.StatusCode.UNIMPLEMENTED)
@@ -86,8 +86,8 @@ def add_RouteGuideServicer_to_server(servicer, server):
           request_deserializer=route__guide__pb2.Point.FromString,
           response_serializer=route__guide__pb2.RouteSummary.SerializeToString,
       ),
-      'RouteChar': grpc.stream_stream_rpc_method_handler(
-          servicer.RouteChar,
+      'RouteChat': grpc.stream_stream_rpc_method_handler(
+          servicer.RouteChat,
           request_deserializer=route__guide__pb2.RouteNote.FromString,
           response_serializer=route__guide__pb2.RouteNote.SerializeToString,
       ),

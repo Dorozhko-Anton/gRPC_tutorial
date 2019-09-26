@@ -12,7 +12,7 @@ service RouteGuide {
     rpc RecordRoute(stream Point) returns (RouteSummary) {}
 
     // bidirectional
-    rpc RouteChar(stream RouteNote) returns (stream RouteNote) {}
+    rpc RouteChat(stream RouteNote) returns (stream RouteNote) {}
 
 }
 
