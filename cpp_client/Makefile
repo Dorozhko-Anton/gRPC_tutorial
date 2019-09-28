@@ -25,4 +25,4 @@ client_debug: route_guide.pb.o route_guide.grpc.pb.o client.o helper.o
 	protoc --cpp_out=. $<
 
 clean:
-	rm -f *.o *.pb.cc *.pb.h client server
+	rm -f *.o *.pb.cc *.pb.h client client_debug
