@@ -11,7 +11,7 @@
 #include "route_guide.grpc.pb.h"
 #endif
 
-namespace routeguide {
+// namespace routeguide {
 
 std::string GetDbFileContent(int argc, char** argv) {
   std::string db_path;
@@ -143,4 +143,4 @@ void ParseDb(const std::string& db, std::vector<Feature>* feature_list) {
             << std::endl;
 }
 
-}  // namespace routeguide
+// }  // namespace routeguide
